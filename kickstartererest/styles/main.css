@@ -1,4 +1,5 @@
 ﻿body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+li { list-style: none; }
 #results { margin: 10px 0 0 10px; }
 .entry { margin: 0 0 10px 0; width: 220px; }
 .entry a { color: #55a4f2; text-decoration: none; }
