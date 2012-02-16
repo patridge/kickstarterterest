@@ -1,26 +1,30 @@
-﻿(function($) {
-    $.getFeedAsJson = function (url, num) {
+﻿/*global jQuery, $, document*/
+(function ($) {
+    "use strict";
+    $.getFeedAsJson = function (url) {
         return $.ajax({
             url: document.location.protocol + "//rss-to-jsonp.apphb.com/atom/?url=" + encodeURIComponent(url),
-            dataType: "jsonp",
+            dataType: "jsonp"
         });
     };
 }(jQuery));
 
 $(function () {
-    var $results = $("#results");
+    "use strict";
+    var $results = $("#results"),
+        projectIdExtractRegex = new RegExp("[^/]+\/([0-9]+)$"),
         projectTemplate = $.template("projectTemplate", $("#projectTemplate"));
     $.getFeedAsJson("http://www.kickstarter.com/projects/feed.atom", 50).done(function (data) {
         var entries = data.entries,
             resultHtml = "";
         $.each(entries, function (i, entry) {
-            entry.projectId = entry.id.match(/[^/]+\/([0-9]+)$/)[1];
+            entry.projectId = entry.id.match(projectIdExtractRegex)[1];
             resultHtml += $.render(entry, projectTemplate);
         });
         $results.append(resultHtml);
         $results.masonry({
-            itemSelector : '.entry',
-            columnWidth : 230
+            itemSelector: ".entry",
+            columnWidth: 230
         });
     });
-});​
+});
