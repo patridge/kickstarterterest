@@ -1,0 +1,9 @@
+﻿body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+#results { margin: 10px 0 0 10px; }
+.entry { margin: 0 0 10px 0; width: 220px; }
+.entry a { color: #55a4f2; text-decoration: none; }
+.entry img { height: 150px; width: 200px; }
+.entry h2 { font-size: 12px; font-weight: bold; line-height: 15px; margin-bottom: 5px; padding: 0 5px; }
+.wrap { -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; -ms-border-radius: 6px; -khtml-border-radius: 6px; background-color: #eee; padding: 4px; }
+.main { background-color: #fff; border: 1px solid #ddd; padding: 5px; }
+.thumb { border: 0; margin: 0; padding: 0; }
