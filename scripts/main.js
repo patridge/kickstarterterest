@@ -3,7 +3,7 @@
     "use strict";
     $.getFeedAsJson = function (url) {
         return $.ajax({
-            url: document.location.protocol + "//rss-to-jsonp.apphb.com/atom/?url=" + encodeURIComponent(url),
+            url: "https://rss-to-jsonp.azurewebsites.net/atom/?url=" + encodeURIComponent(url),
             dataType: "jsonp"
         });
     };
