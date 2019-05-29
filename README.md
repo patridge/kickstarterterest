@@ -7,6 +7,6 @@ Tools used:
 * [jQuery](http://jquery.com/): used to make my life easier.
 * [jQuery Masonry](http://masonry.desandro.com/): used to tile project HTML in a compact form.
 
-###License
+## License
 
 MIT license. If you do something cool with it, though, I'd love to hear about it.
