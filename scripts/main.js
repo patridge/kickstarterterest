@@ -3,7 +3,7 @@
     "use strict";
     $.getFeedAsJson = function (url) {
         return $.ajax({
-            url: document.location.protocol + "//rss-to-jsonp.apphb.com/atom/?url=" + encodeURIComponent(url),
+            url: "https://rss-to-jsonp.azurewebsites.net/atom/?url=" + encodeURIComponent(url),
             dataType: "jsonp"
         });
     };
@@ -14,11 +14,16 @@ $(function () {
     var $results = $("#results"),
         projectIdExtractRegex = new RegExp("[^/]+\/([0-9]+)$"),
         projectTemplate = $.template("projectTemplate", $("#projectTemplate"));
-    $.getFeedAsJson("http://www.kickstarter.com/projects/feed.atom", 50).done(function (data) {
+    $.getFeedAsJson("https://www.kickstarter.com/projects/feed.atom", 50).done(function (data) {
         var entries = data.entries,
             resultHtml = "";
         $.each(entries, function (i, entry) {
-            entry.projectId = entry.id.match(projectIdExtractRegex)[1];
+            var $entryContent = $(entry.content);
+            var projectDescription = $entryContent.text().trim();
+            entry.description = projectDescription;
+            var projectImg = $entryContent.find("img")[0];
+            entry.imageAlt = projectImg.alt;
+            entry.imageThumbnail = projectImg.src;
             resultHtml += $.render(entry, projectTemplate);
         });
         $results.append(resultHtml);

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kickstarterterest</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29261866-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+    <ul id="results"></ul>
+    <script type="text/x-jquery-tmpl" id="projectTemplate">
+        <li class="entry">
+            <div class="wrap">
+                <div class="main">
+                    <div class="thumb">
+                        <a href="{{=link}}"><img src="{{=imageThumbnail}}" alt="{{=imageAlt}}" title="{{=description}}" /></a>
+                    </div>
+                    <h2><a href="{{=link}}">{{=title}}</a></h2>
+                </div>
+            </div>
+        </li>
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jsrender.20111112.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.masonry.20120227.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
